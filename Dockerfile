@@ -9,6 +9,6 @@ RUN npm install
 COPY . /usr/src/app
 RUN npm run dist
 
-EXPOSE 5006
+EXPOSE 5012
 
 CMD [ "npm", "run", "server" ]
