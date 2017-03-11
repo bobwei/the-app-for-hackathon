@@ -18,23 +18,12 @@ export const fetchList = () => dispatch =>
     .then(R.compose(dispatch, setList, R.path(['data', 'data'])));
 
 export const initialState = {
-  entities: {},
-  list: [],
+  list: [{ id: '1' }],
 };
-
-const keyField = 'id';
 
 export default handleActions({
   [setList]: (state, action) => ({
     ...state,
-    entities: R.compose(
-      R.merge(state.entities),
-      R.mergeAll,
-      R.map(row => ({
-        [row[keyField]]: row,
-      })),
-      R.path(['payload']),
-    )(action),
-    list: R.compose(R.map(R.prop(keyField)), R.path(['payload']))(action),
+    list: [...action.payload],
   }),
 }, { ...initialState });
