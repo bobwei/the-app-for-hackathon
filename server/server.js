@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 
 import assets from './assets';
 import render from './render';
+import proxy from './middlewares/proxy';
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ app.set('port', (PORT || 5012));
 /* middlewares */
 app.use(compression());
 app.use(assets());
+app.use(proxy());
 app.use(render());
 
 /* start server */

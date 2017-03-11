@@ -1,31 +1,24 @@
 import React from 'react';
-import { Jumbotron, Grid } from 'react-bootstrap';
-import { Link } from 'react-router';
+import { Grid } from 'react-bootstrap';
+import { connect } from 'react-redux';
 import compose from 'recompose/compose';
 
-import Button from 'modules/ui/components/Button';
+import updateOnMountAndKeysChange from 'modules/utils/decorators/updateOnMountAndKeysChange';
 
-const Home = () => (
-  <Grid>
-    <Jumbotron>
-      <h2>Hello, React App Boilerplate</h2>
-      <p>
-        This is a react app boilerplate with batteries included.
-      </p>
-      <p>
-        <Button
-          bsStyle="default"
-          to={{
-            pathname: '/admin',
-            state: { modal: true },
-          }}
-          componentClass={Link}
-        >
-          open Admin Portal in modal
-        </Button>
-      </p>
-    </Jumbotron>
+import mapDispatchToProps from './mapDispatchToProps';
+import mapStateToProps from './mapStateToProps';
+import styles from './index.scss';
+
+const Home = props => (
+  <Grid className={styles.container}>
+    {console.log(props)}
+    <div>
+      Hi
+    </div>
   </Grid>
 );
 
-export default compose()(Home);
+export default compose(
+  connect(mapStateToProps, mapDispatchToProps),
+  updateOnMountAndKeysChange(),
+)(Home);
