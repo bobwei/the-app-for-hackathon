@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 import { createAction, handleActions } from 'redux-actions';
 
 export const modulePrefix = 'modules/redux/photos';
@@ -8,14 +9,7 @@ export const modulePrefix = 'modules/redux/photos';
 export const setList = createAction(`${modulePrefix}:setList`);
 
 export const initialState = {
-  list: [
-    {
-      id: 1,
-      photo: '',
-      lat: 25.0452722,
-      lon: 121.5289057,
-    },
-  ],
+  list: require('./data.json'),
 };
 
 export default handleActions({
