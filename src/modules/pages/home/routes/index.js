@@ -18,6 +18,13 @@ module.exports = {
     {
       path: 'search/:lat/:lng',
       component: Search,
+      childRoutes: [
+        {
+          indexRoute: {
+            component: require('../containers/Search/CitySearch').default,
+          },
+        },
+      ],
     },
   ],
 };
