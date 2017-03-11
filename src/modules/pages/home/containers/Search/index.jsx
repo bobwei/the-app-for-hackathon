@@ -12,7 +12,9 @@ const Search = props => (
     <Row className={styles.main}>
       <Col md={4} className={styles.panel} style={{ backgroundColor: '#E9573F' }}>e</Col>
       <Col md={8} className={styles.map} >
-        <MyMap />
+        <MyMap
+          {...props.params}
+        />
       </Col>
     </Row>
   </Grid>
