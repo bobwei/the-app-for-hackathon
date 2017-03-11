@@ -12,8 +12,15 @@ const generateInitialMarkers = () => {
   // const latSpan = northEast.lat() - southWest.lat();
 
   const markers = [
-    { lat: 25.04, lng: 121.52 },
-
+    {
+      position: { lat: 25.04, lng: 121.52 },
+    },
+    {
+      position: { lat: 24.97, lng: 121.21 },
+    },
+    {
+      position: { lat: 24.79, lng: 121.06 },
+    },
   ];
   // for (let i = 0; i < 5; i++) {
   //   const position = new google.maps.LatLng(
@@ -28,15 +35,15 @@ const generateInitialMarkers = () => {
   // }
   return markers;
 };
-generateInitialMarkers();
+
 const SimpleMapExampleGoogleMap = withGoogleMap(props => (
   <GoogleMap
     defaultZoom={8}
     {...props}
   >
-    <Marker
-      position={{ lat: 25.04, lng: 121.52 }}
-    />
+    { generateInitialMarkers().map(mark =>
+      <Marker position={mark.position} />)
+    }
   </GoogleMap>
 ));
 
