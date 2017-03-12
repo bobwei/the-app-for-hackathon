@@ -1,10 +1,13 @@
 import React from 'react';
 
-// import styles from './index.scss';
+import styles from './index.scss';
 
 const Days = () => (
   <div>
-    Days
+    <div
+      style={{ backgroundImage: 'url(https://bobwei.github.io/helloworld-assets/city.jpg)' }}
+      className={styles.cityPhoto}
+    />
   </div>
 );
 
