@@ -1,5 +1,6 @@
 /* eslint-disable global-require */
 import Layout from '../components/Layout';
+import Search from '../containers/Search';
 
 module.exports = {
   path: '/',
@@ -13,6 +14,10 @@ module.exports = {
           });
         },
       },
+    },
+    {
+      path: 'search/:lat/:lng',
+      component: Search,
     },
   ],
 };

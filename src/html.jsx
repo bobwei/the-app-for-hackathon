@@ -14,6 +14,7 @@ const HTML = ({
         name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
       />
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpK4IG1G51NDXbmTW4GT4o94vmDU7byjU" />
       <link rel="stylesheet" type="text/css" href={cssSrc} />
     </head>
     <body>
