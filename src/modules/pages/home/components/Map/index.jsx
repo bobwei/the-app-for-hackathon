@@ -1,8 +1,44 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { Row, Col } from 'react-bootstrap';
 import compose from 'recompose/compose';
 
-import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
+import {
+  withGoogleMap,
+  GoogleMap,
+  Marker,
+  InfoWindow,
+} from 'react-google-maps';
+
+const getImageGrid = () =>
+  <Row>
+    <Col md={6}>
+      <img
+        src="https://www.w3schools.com/css/trolltunga.jpg"
+        alt="fuck"
+        height="60"
+        width="60"
+      />
+    </Col>
+    <Col md={6}>
+      <Row>
+        <img
+          src="https://www.w3schools.com/css/trolltunga.jpg"
+          alt="fuck"
+          height="30"
+          width="30"
+        />
+      </Row>
+      <Row>
+        <img
+          src="https://www.w3schools.com/css/trolltunga.jpg"
+          alt="fuck"
+          height="30"
+          width="30"
+        />
+      </Row>
+    </Col>
+  </Row>;
 
 const generateInitialMarkers = () => {
   // const southWest = new google.maps.LatLng(-31.203405, 125.244141);
@@ -14,6 +50,8 @@ const generateInitialMarkers = () => {
   const markers = [
     {
       position: { lat: 25.04, lng: 121.52 },
+      showInfo: true,
+      infoContent: getImageGrid(),
     },
     {
       position: { lat: 24.97, lng: 121.21 },
@@ -41,8 +79,14 @@ const SimpleMapExampleGoogleMap = withGoogleMap(props => (
     defaultZoom={8}
     {...props}
   >
-    { generateInitialMarkers().map(mark =>
-      <Marker position={mark.position} />)
+    { generateInitialMarkers().map(marker =>
+      <Marker position={marker.position}>
+        { marker.showInfo &&
+          <InfoWindow>
+            <div>{marker.infoContent}</div>
+          </InfoWindow>
+        }
+      </Marker>)
     }
   </GoogleMap>
 ));
