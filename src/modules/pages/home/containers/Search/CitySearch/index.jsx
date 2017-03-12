@@ -7,6 +7,11 @@ import styles from './index.scss';
 
 const CitySearch = ({ photos }) => (
   <div>
+    <div>
+      <h3>
+        Your Collection
+      </h3>
+    </div>
     <div className={styles.photosContainer}>
       {photos.map(({ image }) => (
         <div

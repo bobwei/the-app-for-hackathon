@@ -1,13 +1,13 @@
 .photosContainer {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
 .photo {
-  width: 150px;
-  height: 140px;
-  margin: 8px;
+  width: 125px;
+  height: 115px;
+  margin: 7px 0;
   background-size: cover;
   background-repeat: no-repeat;
 }

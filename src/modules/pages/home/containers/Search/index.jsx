@@ -11,10 +11,10 @@ import mapStateToProps from './mapStateToProps';
 const Search = ({ children, params, photos }) => (
   <Grid className={styles.container}>
     <Row className={styles.main}>
-      <Col md={4} className={styles.panel}>
+      <Col md={3} className={styles.panel}>
         {children}
       </Col>
-      <Col md={8} className={styles.map} >
+      <Col md={9} className={styles.map} >
         <MyMap
           {...params}
         />
