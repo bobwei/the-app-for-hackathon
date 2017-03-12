@@ -14,6 +14,7 @@ import styles from './index.scss';
 
 const getImageGrid = photos =>
   <div>
+    <span style={{ color: 'Grey' }}>{photos[0].name.toUpperCase()}</span>
     <Row>
       <Col md={6} className={styles.customPadding}>
         <div
