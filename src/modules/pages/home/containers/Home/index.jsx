@@ -12,13 +12,6 @@ import mapDispatchToProps from './mapDispatchToProps';
 import mapStateToProps from './mapStateToProps';
 import styles from './index.scss';
 
-// const flag = false;
-
-// function onPopUp(id) {
-//   flag = true;
-//   console.log(id);
-// }
-
 const Home = ({ contents, isOpen, toggleOpen }) => (
   <Grid className={styles.container}>
     <header className={styles.headerWrap}>
@@ -90,12 +83,8 @@ Home.propTypes = {
 
 export default compose(
   connect(mapStateToProps, mapDispatchToProps),
-  // updateOnMountAndKeysChange(),
   withState('isOpen', 'setIsOpen', false),
   withHandlers({
-    toggleOpen: ({ setIsOpen, isOpen }) => (event) => {
-      console.log(event.target.id);
-      setIsOpen(!isOpen);
-    },
+    toggleOpen: ({ setIsOpen, isOpen }) => () => setIsOpen(!isOpen),
   }),
 )(Home);
