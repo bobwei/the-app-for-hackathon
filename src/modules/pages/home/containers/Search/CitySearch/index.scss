@@ -1,3 +1,7 @@
+.title {
+  margin-top: 10px;
+}
+
 .photosContainer {
   display: flex;
   justify-content: space-between;
@@ -8,6 +12,23 @@
   width: 125px;
   height: 115px;
   margin: 7px 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.collectionContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  background-color: #eee;
+  min-height: 172px;
+  padding: 5px;
+}
+
+.smallPhoto {
+  width: 78px;
+  height: 78px;
+  margin: 3px;
   background-size: cover;
   background-repeat: no-repeat;
 }
