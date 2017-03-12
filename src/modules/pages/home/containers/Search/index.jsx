@@ -9,7 +9,7 @@ import mapStateToProps from './mapStateToProps';
 
 // eslint-disable-next-line no-unused-vars
 const Search = ({ children, params, photos }) => (
-  <Grid className={styles.container}>
+  <Grid className={styles.myContainer}>
     <Row className={styles.main}>
       <Col md={3} className={styles.panel}>
         {children}
