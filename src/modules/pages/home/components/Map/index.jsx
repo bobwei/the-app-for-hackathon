@@ -1,7 +1,8 @@
-/* eslint-disable react/prop-types */
+/* eslint-disable react/prop-types, jsx-a11y/no-static-element-interactions */
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import compose from 'recompose/compose';
+import getContext from 'recompose/getContext';
 
 import {
   withGoogleMap,
@@ -78,8 +79,10 @@ const SimpleMapExampleGoogleMap = withGoogleMap(props => (
     { generateInitialMarkers(props.photos).map(marker =>
       <Marker position={marker.position} key={marker.name}>
         { marker.showInfo &&
-          <InfoWindow>
-            <div>{marker.infoContent}</div>
+          <InfoWindow onClick={() => props.router.replace(`${props.router.location.pathname}?selectedCity=${marker.name}`)}>
+            <div>
+              {marker.infoContent}
+            </div>
           </InfoWindow>
         }
       </Marker>)
@@ -87,7 +90,7 @@ const SimpleMapExampleGoogleMap = withGoogleMap(props => (
   </GoogleMap>
 ));
 
-const MyMap = ({ lat, lng, photos }) => (
+const MyMap = ({ lat, lng, photos, router }) => (
   <SimpleMapExampleGoogleMap
     containerElement={
       <div style={{ height: '100%' }} />
@@ -96,8 +99,13 @@ const MyMap = ({ lat, lng, photos }) => (
       <div style={{ height: '100%' }} />
     }
     photos={photos}
+    router={router}
     defaultCenter={{ lat: parseFloat(lat), lng: parseFloat(lng) }}
   />
 );
 
-export default compose()(MyMap);
+export default compose(
+  getContext({
+    router: React.PropTypes.object,
+  }),
+)(MyMap);
