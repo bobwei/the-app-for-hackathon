@@ -4,6 +4,7 @@ Bootagraphy
 
 Book a trip with wonderful photography!
 
+team members: Bob, Criss, Marisa, Victor, Zito
 
 ## Development Flow
 
