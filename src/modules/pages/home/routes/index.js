@@ -8,6 +8,7 @@ module.exports = {
   childRoutes: [
     {
       indexRoute: {
+        // component: require('../containers/Home').default,
         getComponent(nextState, cb) {
           require.ensure([], (require) => {
             cb(null, require('../containers/Home').default);
