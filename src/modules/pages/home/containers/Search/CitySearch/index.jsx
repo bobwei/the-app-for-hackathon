@@ -2,6 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Button } from 'react-bootstrap';
+import { Link } from 'react-router';
 import R from 'ramda';
 import compose from 'recompose/compose';
 import withState from 'recompose/withState';
@@ -24,7 +25,9 @@ const CitySearch = ({ photos, selectedPhotos, toggleSelect }) => (
           />
         ))}
       </div>
-      <Button type="button" className={styles.button} block>Plan a trip</Button>
+      <Button type="button" className={styles.button} block componentClass={Link} to="/search/25.04/121.51/days">
+        Plan a trip
+      </Button>
     </div>
     <div className={styles.photosContainer}>
       {photos.map(({ image }) => (

@@ -24,6 +24,10 @@ module.exports = {
             component: require('../containers/Search/CitySearch').default,
           },
         },
+        {
+          path: 'days',
+          component: require('../containers/Search/Days').default,
+        },
       ],
     },
   ],
