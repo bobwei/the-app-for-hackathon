@@ -5,6 +5,7 @@ import { routerReducer } from 'react-router-redux';
 import authReducer from 'modules/auth/reducers';
 import adminReducer from 'modules/pages/admin/reducers';
 import contentsReducer from 'modules/redux/contents';
+import photosReducer from 'modules/redux/photos';
 
 export default combineReducers({
   form: formReducer,
@@ -12,4 +13,5 @@ export default combineReducers({
   user: authReducer,
   admin: adminReducer,
   contents: contentsReducer,
+  photos: photosReducer,
 });

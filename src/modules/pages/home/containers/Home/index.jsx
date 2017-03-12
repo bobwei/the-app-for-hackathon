@@ -9,13 +9,8 @@ import mapDispatchToProps from './mapDispatchToProps';
 import mapStateToProps from './mapStateToProps';
 import styles from './index.scss';
 
-const Home = props => (
-  <Grid className={styles.container}>
-    {console.log(props)}
-    <div>
-      Hi
-    </div>
-  </Grid>
+const Home = () => (
+  <Grid className={styles.container} />
 );
 
 export default compose(
