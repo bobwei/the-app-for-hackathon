@@ -4,12 +4,14 @@ import { connect } from 'react-redux';
 import compose from 'recompose/compose';
 
 import MyMap from '../../components/Map';
+import FilterBar from '../../components/FilterBar';
 import styles from './index.scss';
 import mapStateToProps from './mapStateToProps';
 
 // eslint-disable-next-line no-unused-vars
 const Search = ({ children, params, photos }) => (
   <Grid className={styles.container}>
+    <FilterBar />
     <Row className={styles.main}>
       <Col md={4} className={styles.panel}>
         {children}
