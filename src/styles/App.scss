@@ -1,4 +1,5 @@
 @import '~normalize.css';
+@import "~muicss/lib/sass/mui.scss";
 
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
@@ -14,6 +15,15 @@ $fa-font-path: '~font-awesome/fonts';
 body {
   color: #484848;
   letter-spacing: 1px;
+}
+
+.mui-select {
+  margin-bottom: 0;
+  padding-top: 0;
+}
+
+.mui-select__menu {
+  max-height: 250px;
 }
 
 a {

@@ -57,17 +57,7 @@ const generateInitialMarkers = (photos) => {
       infoContent: getImageGrid(photos.filter(item => item.name === 'hsinchu')),
     },
   ];
-  // for (let i = 0; i < 5; i++) {
-  //   const position = new google.maps.LatLng(
-  //     southWest.lat() + latSpan * Math.random(),
-  //     southWest.lng() + lngSpan * Math.random()
-  //   );
-  //   markers.push({
-  //     position,
-  //     content: `This is the secret message`.split(` `)[i],
-  //     showInfo: false,
-  //   });
-  // }
+
   return markers;
 };
 

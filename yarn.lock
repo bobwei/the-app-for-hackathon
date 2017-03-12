@@ -3675,6 +3675,10 @@ ms@0.7.2:
   version "0.7.2"
   resolved "https://registry.yarnpkg.com/ms/-/ms-0.7.2.tgz#ae25cf2512b3885a1d95d7f037868d8431124765"
 
+muicss@^0.9.10:
+  version "0.9.10"
+  resolved "https://registry.yarnpkg.com/muicss/-/muicss-0.9.10.tgz#ff2bd22ed0768cebbbb9daa69f351514afce0f8d"
+
 mute-stream@0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.5.tgz#8fbfabb0a98a253d3184331f9e8deb7372fac6c0"
