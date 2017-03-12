@@ -1,9 +1,31 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import compose from 'recompose/compose';
 
-const CitySearch = () => (
+import mapStateToProps from './mapStateToProps';
+import styles from './index.scss';
+
+const CitySearch = ({ photos }) => (
   <div>
-    CitySearch
+    <div className={styles.photosContainer}>
+      {photos.map(({ image }) => (
+        <div
+          style={{ backgroundImage: `url(${image})` }}
+          className={styles.photo}
+        />
+      ))}
+    </div>
   </div>
 );
 
-export default CitySearch;
+CitySearch.propTypes = {
+  photos: React.PropTypes.arrayOf(React.PropTypes.shape({
+    photo: React.PropTypes.string,
+    lat: React.PropTypes.number,
+    lon: React.PropTypes.number,
+  })),
+};
+
+export default compose(
+  connect(mapStateToProps),
+)(CitySearch);
