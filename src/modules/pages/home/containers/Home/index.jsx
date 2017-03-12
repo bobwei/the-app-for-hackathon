@@ -20,21 +20,6 @@ import styles from './index.scss';
 
 const Home = ({ contents, isOpen, toggleOpen }) => (
   <Grid className={styles.container}>
-    <header className={styles.headerWrap}>
-      <div className={styles.logoWrap} />
-      <div className={styles.pplWrap}>
-        <div className={styles.ppl} />
-        <div className={styles.text}>Miss Chang</div>
-      </div>
-      <div className={styles.inputWrap}>
-        <span className={styles.leftCircle} />
-        <input type="text" placeholder="Search the city you want to go" />
-        <span className={styles.rightCircle} />
-        <span className={styles.searchIcon}>
-          <i className="fa fa-search" aria-hidden="true" />
-        </span>
-      </div>
-    </header>
     {console.log('contents:', contents)}
     <div className={styles.viewPort}>
       <div className={styles.gridWrap}>

@@ -12,6 +12,7 @@ import shallowEqual from 'recompose/shallowEqual';
 import Modal from 'modules/ui/components/Modal';
 
 // import NavigationBar from '../NavigationBar';
+import styles from './index.scss';
 
 const Layout = ({
   children, previousChildren,
@@ -19,6 +20,21 @@ const Layout = ({
   onHide,
 }) => (
   <div>
+    <header className={styles.headerWrap}>
+      <div className={styles.logoWrap} />
+      <div className={styles.pplWrap}>
+        <div className={styles.ppl} />
+        <div className={styles.text}>Miss Chang</div>
+      </div>
+      <div className={styles.inputWrap}>
+        <span className={styles.leftCircle} />
+        <input type="text" placeholder="Search the city you want to go" />
+        <span className={styles.rightCircle} />
+        <span className={styles.searchIcon}>
+          <i className="fa fa-search" aria-hidden="true" />
+        </span>
+      </div>
+    </header>
     {modal &&
       <div>
         <Modal show onHide={onHide} {...modalProps}>
