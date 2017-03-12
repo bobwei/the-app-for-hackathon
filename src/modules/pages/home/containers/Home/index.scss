@@ -1,5 +1,4 @@
 $grayColor: rgb(238, 238, 238);
-$headerColor: white;
 
 .container {
   width: 1400px;
@@ -13,7 +12,34 @@ $headerColor: white;
     padding: 20px 0;
     border-bottom: $grayColor 1px solid;
     display: block;
-    background: $headerColor;
+    background: white;
+    .logoWrap {
+      float: left;
+      display: inline-block;
+      background: url('https://s3.amazonaws.com/vr-fe-hackathon/images/logo.png') no-repeat;
+      height: 70px;
+      width: 250px;
+      background-size: contain;
+      margin: -10px 0 0 20px;
+    }
+    .pplWrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      float: right;
+      width: 30%;
+      margin: -10px 0 0;
+      .ppl {
+        display: inline-block;
+        background: url('https://s3.amazonaws.com/vr-fe-hackathon/images/profile.jpg') no-repeat;
+        height: 70px;
+        width: 70px;
+        border: 1px solid #eeeeee;
+        border-radius: 50%;
+        background-size: contain;
+        margin: 0 20px;
+      }
+    }
     .inputWrap {
       width: 450px;
       margin: 0 auto;
@@ -25,7 +51,7 @@ $headerColor: white;
         display: inline-block;
         border: $grayColor 1px solid;
         border-radius: 50%;
-        background: $headerColor;
+        background: #f7f8fa;
       }
       .searchIcon {
         margin: 0 0 0 -400px;
@@ -33,7 +59,7 @@ $headerColor: white;
         z-index: 3;
         color: $grayColor;
         font-size: 20px;
-        background: $headerColor;
+        background: #f7f8fa;
       }
       input {
         z-index: 3;
@@ -48,6 +74,7 @@ $headerColor: white;
         border-bottom: $grayColor 1px solid;
         font-size: 20px;
         outline: none;
+        background: #f7f8fa;
       }
     }
   }

@@ -11,7 +11,7 @@ import shallowEqual from 'recompose/shallowEqual';
 
 import Modal from 'modules/ui/components/Modal';
 
-import NavigationBar from '../NavigationBar';
+// import NavigationBar from '../NavigationBar';
 
 const Layout = ({
   children, previousChildren,
@@ -19,7 +19,6 @@ const Layout = ({
   onHide,
 }) => (
   <div>
-    <NavigationBar />
     {modal &&
       <div>
         <Modal show onHide={onHide} {...modalProps}>
