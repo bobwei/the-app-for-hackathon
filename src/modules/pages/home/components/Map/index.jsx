@@ -79,8 +79,8 @@ const SimpleMapExampleGoogleMap = withGoogleMap(props => (
     { generateInitialMarkers(props.photos).map(marker =>
       <Marker position={marker.position} key={marker.name}>
         { marker.showInfo &&
-          <InfoWindow onClick={() => props.router.replace(`${props.router.location.pathname}?selectedCity=${marker.name}`)}>
-            <div>
+          <InfoWindow>
+            <div onClick={() => props.router.replace(`${props.router.location.pathname}?selectedCity=${marker.name}`)}>
               {marker.infoContent}
             </div>
           </InfoWindow>
