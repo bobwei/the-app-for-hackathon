@@ -1,6 +1,8 @@
-/* eslint-disable react/prop-types, jsx-a11y/no-static-element-interactions */
+/* eslint-disable */
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import { getFormValues } from 'redux-form';
 import compose from 'recompose/compose';
 import getContext from 'recompose/getContext';
 
@@ -63,9 +65,13 @@ const generateInitialMarkers = (photos) => {
 
 const SimpleMapExampleGoogleMap = withGoogleMap(props => (
   <GoogleMap
-    defaultZoom={8}
+    defaultZoom={12}
+    defaultCenter={new google.maps.LatLng(25.064879, 121.531089)}
+    center={new google.maps.LatLng(25.064879, 121.531089)}
+    zoom={11 - (parseInt(props.filter && props.filter.days, 10) || 0)}
     {...props}
   >
+    {console.log(props.filter)}
     { generateInitialMarkers(props.photos).map(marker =>
       <Marker position={marker.position} key={marker.name}>
         { marker.showInfo &&
@@ -80,7 +86,7 @@ const SimpleMapExampleGoogleMap = withGoogleMap(props => (
   </GoogleMap>
 ));
 
-const MyMap = ({ lat, lng, photos, router }) => (
+const MyMap = ({ lat, lng, photos, router, filter }) => (
   <SimpleMapExampleGoogleMap
     containerElement={
       <div style={{ height: '100%' }} />
@@ -91,10 +97,14 @@ const MyMap = ({ lat, lng, photos, router }) => (
     photos={photos}
     router={router}
     defaultCenter={{ lat: parseFloat(lat), lng: parseFloat(lng) }}
+    filter={filter}
   />
 );
 
 export default compose(
+  connect(state => ({
+    filter: getFormValues('filter')(state),
+  })),
   getContext({
     router: React.PropTypes.object,
   }),

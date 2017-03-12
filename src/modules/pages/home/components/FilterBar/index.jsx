@@ -40,7 +40,7 @@ const FilterBar = () => (
           >
             {R.range(1, 10).map((item) => {
               const formattedDay = item > 1 ? 'Days' : 'Day';
-              return <Option value={item} label={`${item} ${formattedDay}`} />;
+              return <Option key={item} value={item} label={`${item} ${formattedDay}`} />;
             })}
           </Field>
         </Form>
