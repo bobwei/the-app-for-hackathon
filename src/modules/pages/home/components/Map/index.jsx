@@ -10,54 +10,49 @@ import {
   InfoWindow,
 } from 'react-google-maps';
 
-const getImageGrid = () =>
-  <Row>
-    <Col md={6}>
-      <img
-        src="https://www.w3schools.com/css/trolltunga.jpg"
-        alt="fuck"
-        height="60"
-        width="60"
-      />
-    </Col>
-    <Col md={6}>
-      <Row>
-        <img
-          src="https://www.w3schools.com/css/trolltunga.jpg"
-          alt="fuck"
-          height="30"
-          width="30"
+import styles from './index.scss';
+
+const getImageGrid = photos =>
+  <div>
+    <Row>
+      <Col md={6} className={styles.customPadding}>
+        <div
+          style={{ backgroundImage: `url(${photos[0].image})` }}
+          className={styles.photo}
         />
-      </Row>
-      <Row>
-        <img
-          src="https://www.w3schools.com/css/trolltunga.jpg"
-          alt="fuck"
-          height="30"
-          width="30"
+      </Col>
+      <Col md={6} className={styles.customPadding}>
+        <div
+          style={{ backgroundImage: `url(${photos[1].image})` }}
+          className={styles.xsPhoto}
         />
-      </Row>
-    </Col>
-  </Row>;
+        <div
+          style={{ backgroundImage: `url(${photos[2].image})` }}
+          className={styles.xsPhoto}
+        />
+      </Col>
+    </Row>
+  </div>;
 
-const generateInitialMarkers = () => {
-  // const southWest = new google.maps.LatLng(-31.203405, 125.244141);
-  // const northEast = new google.maps.LatLng(-25.363882, 131.044922);
-
-  // const lngSpan = northEast.lng() - southWest.lng();
-  // const latSpan = northEast.lat() - southWest.lat();
-
+const generateInitialMarkers = (photos) => {
   const markers = [
     {
+      name: 'taipei',
       position: { lat: 25.04, lng: 121.52 },
       showInfo: true,
-      infoContent: getImageGrid(),
+      infoContent: getImageGrid(photos.filter(item => item.name === 'taipei')),
     },
     {
+      name: 'taoyuan',
       position: { lat: 24.97, lng: 121.21 },
+      showInfo: true,
+      infoContent: getImageGrid(photos.filter(item => item.name === 'taoyuan')),
     },
     {
+      name: 'hsinchu',
       position: { lat: 24.79, lng: 121.06 },
+      showInfo: true,
+      infoContent: getImageGrid(photos.filter(item => item.name === 'hsinchu')),
     },
   ];
   // for (let i = 0; i < 5; i++) {
@@ -79,8 +74,8 @@ const SimpleMapExampleGoogleMap = withGoogleMap(props => (
     defaultZoom={8}
     {...props}
   >
-    { generateInitialMarkers().map(marker =>
-      <Marker position={marker.position}>
+    { generateInitialMarkers(props.photos).map(marker =>
+      <Marker position={marker.position} key={marker.name}>
         { marker.showInfo &&
           <InfoWindow>
             <div>{marker.infoContent}</div>
@@ -91,7 +86,7 @@ const SimpleMapExampleGoogleMap = withGoogleMap(props => (
   </GoogleMap>
 ));
 
-const MyMap = ({ lat, lng }) => (
+const MyMap = ({ lat, lng, photos }) => (
   <SimpleMapExampleGoogleMap
     containerElement={
       <div style={{ height: '100%' }} />
@@ -99,6 +94,7 @@ const MyMap = ({ lat, lng }) => (
     mapElement={
       <div style={{ height: '100%' }} />
     }
+    photos={photos}
     defaultCenter={{ lat: parseFloat(lat), lng: parseFloat(lng) }}
   />
 );

@@ -1,85 +1,85 @@
 [
   {
     "image": "https://s3.amazonaws.com/vr-fe-hackathon/images/hsinchu2.jpg",
-    "name": "hsinchu2",
+    "name": "hsinchu",
     "lat": 24.780434,
     "lng": 120.899601
   },
   {
     "image": "https://s3.amazonaws.com/vr-fe-hackathon/images/hsinchu3.jpg",
-    "name": "hsinchu3",
+    "name": "hsinchu",
     "lat": 24.748884,
     "lng": 120.904166
   },
   {
     "image": "https://s3.amazonaws.com/vr-fe-hackathon/images/hsinchu4.jpg",
-    "name": "hsinchu4",
+    "name": "hsinchu",
     "lat": 24.846268,
     "lng": 120.925883
   },
   {
     "image": "https://s3.amazonaws.com/vr-fe-hackathon/images/hsinchu5.jpg",
-    "name": "hsinchu5",
+    "name": "hsinchu",
     "lat": 24.31197,
     "lng": 120.549786
   },
   {
     "image": "https://s3.amazonaws.com/vr-fe-hackathon/images/taipei1.jpg",
-    "name": "taipei1",
+    "name": "taipei",
     "lat": 25.026391,
     "lng": 121.575425
   },
   {
     "image": "https://s3.amazonaws.com/vr-fe-hackathon/images/taipei2.jpg",
-    "name": "taipei2",
+    "name": "taipei",
     "lat": 25.049296,
     "lng": 121.578325
   },
   {
     "image": "https://s3.amazonaws.com/vr-fe-hackathon/images/taipei3.jpg",
-    "name": "taipei3",
+    "name": "taipei",
     "lat": 25.09725,
     "lng": 121.51501
   },
   {
     "image": "https://s3.amazonaws.com/vr-fe-hackathon/images/taipei4.jpg",
-    "name": "taipei4",
+    "name": "taipei",
     "lat": 25.194256,
     "lng": 121.560968
   },
   {
     "image": "https://s3.amazonaws.com/vr-fe-hackathon/images/taipei5.jpg",
-    "name": "taipei5",
+    "name": "taipei",
     "lat": 25.037211,
     "lng": 121.49989
   },
   {
     "image": "https://s3.amazonaws.com/vr-fe-hackathon/images/taoyuan1.jpg",
-    "name": "taoyuan1",
+    "name": "taoyuan",
     "lat": 24.97188,
     "lng": 121.108455
   },
   {
     "image": "https://s3.amazonaws.com/vr-fe-hackathon/images/taoyuan2.jpg",
-    "name": "taoyuan2",
+    "name": "taoyuan",
     "lat": 24.979759,
     "lng": 121.092485
   },
   {
     "image": "https://s3.amazonaws.com/vr-fe-hackathon/images/taoyuan3.jpg",
-    "name": "taoyuan3",
+    "name": "taoyuan",
     "lat": 24.81243,
     "lng": 121.245844
   },
   {
     "image": "https://s3.amazonaws.com/vr-fe-hackathon/images/taoyuan4.jpg",
-    "name": "taoyuan4",
+    "name": "taoyuan",
     "lat": 24.840154,
     "lng": 121.347622
   },
   {
     "image": "https://s3.amazonaws.com/vr-fe-hackathon/images/taoyuan5.jpg",
-    "name": "taoyuan5",
+    "name": "taoyuan",
     "lat": 25.119103,
     "lng": 121.243033
   }
