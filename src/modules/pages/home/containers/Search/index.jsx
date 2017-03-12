@@ -21,6 +21,14 @@ const Search = ({ children, params, photos }) => (
         />
       </Col>
     </Row>
+    {!!params.action &&
+      <div
+        style={{
+          backgroundImage: 'url(https://bobwei.github.io/helloworld-assets/booking.jpg)',
+        }}
+        className={styles.booking}
+      />
+    }
   </Grid>
 );
 
