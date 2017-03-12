@@ -1,6 +1,7 @@
 /* eslint-disable no-underscore-dangle, jsx-a11y/no-static-element-interactions */
 import React from 'react';
 import { connect } from 'react-redux';
+import { Button } from 'react-bootstrap';
 import R from 'ramda';
 import compose from 'recompose/compose';
 import withState from 'recompose/withState';
@@ -11,7 +12,7 @@ import styles from './index.scss';
 
 const CitySearch = ({ photos, selectedPhotos, toggleSelect }) => (
   <div>
-    <div>
+    <div className={styles.collectionBlock}>
       <h3 className={styles.title}>
         Your Collection
       </h3>
@@ -23,12 +24,13 @@ const CitySearch = ({ photos, selectedPhotos, toggleSelect }) => (
           />
         ))}
       </div>
+      <Button type="button" className={styles.button} block>Plan a trip</Button>
     </div>
     <div className={styles.photosContainer}>
       {photos.map(({ image }) => (
         <div
           style={{ backgroundImage: `url(${image})` }}
-          className={styles.photo}
+          className={styles.mediumPhoto}
           id={image}
           onClick={toggleSelect}
         />

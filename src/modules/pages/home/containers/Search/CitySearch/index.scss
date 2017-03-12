@@ -16,10 +16,17 @@
   background-repeat: no-repeat;
 }
 
+.collectionBlock {
+  margin-bottom: 20px;
+}
+
+.button {
+  margin-top: 15px;
+}
+
 .collectionContainer {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 20px;
   background-color: #eee;
   min-height: 172px;
   padding: 5px;
