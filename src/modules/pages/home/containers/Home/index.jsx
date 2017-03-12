@@ -3,6 +3,7 @@
 import React from 'react';
 import { Grid, Modal } from 'react-bootstrap';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 import compose from 'recompose/compose';
 import withState from 'recompose/withState';
 import withHandlers from 'recompose/withHandlers';
@@ -35,14 +36,10 @@ const Home = ({ contents, isOpen, toggleOpen }) => (
         </span>
       </div>
     </header>
-    {console.log('contents:', contents)}
     <div className={styles.viewPort}>
       <div className={styles.gridWrap}>
         {contents.map(content => (
-          <div
-            key={content.image}
-            className={styles.imgWrap}
-          >
+          <div key={content.image} className={styles.imgWrap}>
             <img alt="" src={content.image} id={content.image} onClick={toggleOpen} />
           </div>
         ))}
@@ -80,7 +77,7 @@ const Home = ({ contents, isOpen, toggleOpen }) => (
               <img alt="" src="https://s3.amazonaws.com/vr-fe-hackathon/images/map_efwljf.png" />
             </div>
           </div>
-          <div className="btn">Explore A Trip</div>
+          <Link to="/search/25.04/121.51" className="btn">Explore A Trip</Link>
         </div>
       </Modal.Body>
     </Modal>
