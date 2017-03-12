@@ -17,6 +17,7 @@ const Search = ({ children, params, photos }) => (
       <Col md={9} className={styles.map} >
         <MyMap
           {...params}
+          photos={photos}
         />
       </Col>
     </Row>
