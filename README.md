@@ -1,6 +1,8 @@
 # README
 
-The travel planing for photographer
+Bootagraphy
+
+Book a trip with wonderful photography!
 
 
 ## Development Flow
